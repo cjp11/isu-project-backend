@@ -12,7 +12,7 @@ public class Member {
     @Id
     @Column(name="id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY) //db가 알아서 auto_increment
-    private Long id;
+    private int id;
     @Column
     private String member_id;
     @Column
