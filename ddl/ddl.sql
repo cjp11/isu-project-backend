@@ -62,9 +62,9 @@ DROP TABLE IF EXISTS `reply`;
 
 CREATE TABLE `reply` (
                          `id`	bigint	NOT NULL,
-                         `board_id`	bigint	NOT NULL,
+                         `content_id`	bigint	NOT NULL,
                          `member_id`	bigint	NOT NULL,
-                         `reply_content`	varchar(200)	NULL,
+                         `text`	varchar(200)	NULL,
                          `create_datetime`	datetime	NULL,
                          `update_datetime`	datetime	NULL,
                          `delete_yn`	char(1)	NULL,
