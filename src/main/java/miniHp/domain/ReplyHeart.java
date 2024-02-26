@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name="reply_heart")
-public class replyHeart {
+public class ReplyHeart {
 
     @Id
     @Column(name="id", nullable = false)

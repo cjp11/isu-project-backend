@@ -23,7 +23,7 @@ public class Content {
     @JoinColumn(name = "member_id")
     private Member member;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
 
