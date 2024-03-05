@@ -1,27 +1,36 @@
-package miniHp.domain;
+package minihp.data.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+
+import java.util.List;
 
 @Entity
+@Getter
 @Table(name="homepage")
 public class HomePage {
 
     @Id
-    @Column(name="id", nullable = false)
+    @Column(name="homepage_id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY) //db가 알아서 auto_increment
-    private int id;
+    private Long id;
     @Column
-    private int memberId;
+    @OneToOne
+    @JoinColumn(name = "member_id")
+    private Member member;
     @Column
     private String name;
     @Column
     private String nickname;
-    @Column
-    private String profile_image;
+    @Column(name = "profile_image")
+    private String profileImage;
     @Column
     private  String introduce;
     @Column
     private String theme;
     @Column
     private char weather;
+
+    @OneToMany(mappedBy = "homepage")
+    private List<Music> musicList;
 }

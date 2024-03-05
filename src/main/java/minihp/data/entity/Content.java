@@ -1,4 +1,4 @@
-package miniHp.domain;
+package minihp.data.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -7,16 +7,18 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
-@Setter
-@Table(name = "CONTENT")
+@Table(name = "content")
 public class Content {
 
     @Id
     @GeneratedValue
-    @Column(name = "id")
+    @Column(name = "content_id")
     private Long id;
 
     @ManyToOne
@@ -33,11 +35,11 @@ public class Content {
 
     @CreationTimestamp
     @Column(name = "create_datetime", nullable = false, updatable = false)
-    private LocalDate createdTime;
+    private LocalDateTime createdTime;
 
     @UpdateTimestamp
     @Column(name = "update_datetime", nullable = false)
-    private LocalDate updatedTime;
+    private LocalDateTime updatedTime;
 
     @Column(name = "view_count")
     private int viewCount;
@@ -45,5 +47,10 @@ public class Content {
     @Column(name = "delete_yn")
     private Character deleteYn;
 
+    @OneToMany(mappedBy = "content")
+    private List<ContentFile> contentFile = new ArrayList<>();
+
+    @OneToMany(mappedBy = "content")
+    private List<Reply> replyList = new ArrayList<>();
 
 }
