@@ -1,4 +1,5 @@
 package minihp.service;
 
-public class MemberService {
+public interface MemberService {
+
 }
