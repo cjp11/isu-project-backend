@@ -1,6 +1,7 @@
 package minihp.data.entity;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
@@ -24,4 +25,9 @@ public class Category {
 
     @Column(name = "delete_yn")
     private String deleteYn;
+
+    @ManyToOne
+    @JoinColumn(name = "homepage_id")
+    private HomePage homePageId;
+
 }
