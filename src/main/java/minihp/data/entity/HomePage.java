@@ -14,7 +14,6 @@ public class HomePage {
     @Column(name="homepage_id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY) //db가 알아서 auto_increment
     private Long id;
-    @Column
     @OneToOne
     @JoinColumn(name = "member_id")
     private Member member;
@@ -31,6 +30,6 @@ public class HomePage {
     @Column
     private char weather;
 
-    @OneToMany(mappedBy = "homepage")
+    @OneToMany(mappedBy = "homePage")
     private List<Music> musicList;
 }
