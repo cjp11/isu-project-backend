@@ -13,7 +13,7 @@ public class ReplyLikes {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "reply_id")
+    @JoinColumn(name = "id")
     private Reply reply;
 
     @ManyToOne

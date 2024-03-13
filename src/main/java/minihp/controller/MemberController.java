@@ -19,7 +19,7 @@ public class MemberController {
 
         return ResponseEntity.ok(
                 ResponseData.builder()
-                        .status(500)
+                        .status(200)
                         .message("Success")
                         .data(dto)
                         .build()

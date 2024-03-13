@@ -35,17 +35,17 @@ public class Content {
 
     @CreationTimestamp
     @Column(name = "create_datetime", nullable = false, updatable = false)
-    private LocalDateTime createdTime;
+    private LocalDateTime createDatetime;
 
     @UpdateTimestamp
     @Column(name = "update_datetime", nullable = false)
-    private LocalDateTime updatedTime;
+    private LocalDateTime updateDatetime;
 
     @Column(name = "view_count")
-    private int viewCount;
+    private Long viewCount;
 
     @Column(name = "delete_yn")
-    private Character deleteYn;
+    private String deleteYn;
 
     @OneToMany(mappedBy = "content")
     private List<ContentFile> contentFile = new ArrayList<>();
