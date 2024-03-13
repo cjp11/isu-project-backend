@@ -68,9 +68,7 @@ CREATE TABLE `reply` (
                          `create_datetime`	datetime	NULL,
                          `update_datetime`	datetime	NULL,
                          `delete_yn`	char(1)	NULL,
-                         `reply_id`	bigint	NULL,
-                         `reply_order`	bigint	NULL,
-                         `reply_dept`	bigint	NULL
+                         `parent_id`	bigint	NULL
 );
 
 DROP TABLE IF EXISTS `reply_heart`;
