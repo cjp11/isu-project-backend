@@ -3,12 +3,14 @@ package minihp.data.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 import org.checkerframework.common.aliasing.qual.Unique;
 
 import java.util.Date;
 
 @Entity
 @Getter
+@Setter
 @Table(name = "member")
 public class Member {
 
