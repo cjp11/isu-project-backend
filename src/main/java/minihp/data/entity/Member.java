@@ -13,7 +13,7 @@ import java.util.Date;
 public class Member {
 
     @Id @GeneratedValue
-    @Column(name="id", nullable = false)
+    @Column(name="member_id", nullable = false)
     private Long id;
 
     private String email;
