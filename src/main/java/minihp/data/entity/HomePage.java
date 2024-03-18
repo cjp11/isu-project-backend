@@ -11,7 +11,7 @@ import java.util.List;
 public class HomePage {
 
     @Id
-    @Column(name="homepage_id", nullable = false)
+    @Column(name="homepage_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY) //db가 알아서 auto_increment
     private Long id;
     @OneToOne

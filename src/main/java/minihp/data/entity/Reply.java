@@ -17,7 +17,7 @@ import java.util.List;
 public class Reply {
     @Id
     @GeneratedValue
-    @Column(name = "id")
+    @Column(name = "reply_id")
     private Long id;
 
     @ManyToOne

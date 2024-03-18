@@ -13,7 +13,7 @@ public class File {
 
     @Id
     @GeneratedValue
-    @Column(name = "id")
+    @Column(name = "file_id")
     private Long id;
 
     @Column
