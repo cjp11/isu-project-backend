@@ -9,10 +9,12 @@ import lombok.Getter;
 public class ReplyLikes {
 
     @Id
-    @Column(name = "likes_id")
+    @Column(name = "reply_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
+    @MapsId
     @JoinColumn(name = "reply_id")
     private Reply reply;
 

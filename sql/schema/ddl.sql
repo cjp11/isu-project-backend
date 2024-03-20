@@ -9,7 +9,10 @@ CREATE TABLE `member` (
                           `birth_date`	DATE	NULL,
                           `gender`	char(1)	NULL,
                           `address`	VARCHAR(200)	NULL,
-                          `delete_yn`	char(1)	NULL
+                          `delete_yn`	char(1)	NULL,
+                          `nickname`	varchar(200)	NULL,
+                          `profile_image`	varchar(200)	NULL,
+                          `introduce`	varchar(500)	NULL
 );
 
 DROP TABLE IF EXISTS `homepage`;
@@ -18,9 +21,6 @@ CREATE TABLE `homepage` (
                             `homepage_id`	bigint	NOT NULL,
                             `member_id`	VARCHAR(100)	NOT NULL,
                             `name`	varchar(200)	NULL,
-                            `nickname`	varchar(200)	NULL,
-                            `profile_image`	varchar(200)	NULL,
-                            `introduce`	varchar(500)	NULL,
                             `theme`	varchar(50)	NULL,
                             `wheather`	char(1)	NULL
 );
