@@ -11,6 +11,7 @@ import java.util.Date;
 public class Follow {
 
     @Id @Column(name = "following_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne

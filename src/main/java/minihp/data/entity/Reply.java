@@ -16,7 +16,7 @@ import java.util.List;
 @Table(name = "reply")
 public class Reply {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "reply_id")
     private Long id;
 
