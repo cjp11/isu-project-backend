@@ -19,12 +19,7 @@ public class HomePage {
     private Member member;
     @Column
     private String name;
-    @Column
-    private String nickname;
-    @Column(name = "profile_image")
-    private String profileImage;
-    @Column
-    private  String introduce;
+
     @Column
     private String theme;
     @Column

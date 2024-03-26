@@ -13,6 +13,7 @@ public class ContentFile {
 
     @Id
     @Column(name = "content_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne

@@ -1,16 +1,13 @@
 package minihp.controller;
 
 import lombok.extern.slf4j.Slf4j;
-import minihp.data.dto.ContentDto;
+import minihp.data.dto.RequestContentDto;
+import minihp.data.dto.ResponseContentDto;
 import minihp.data.dto.ResponseData;
 import minihp.service.ContentService;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/content")
@@ -21,17 +18,47 @@ public class ContentController {
     ContentService contentService;
 
     @PostMapping("/list")
-    public ResponseEntity<ResponseData> test2() {
-        log.info("호출");
-        contentService.getContentList(ContentDto.builder().build());
+    public ResponseEntity<ResponseData> getContentList(@RequestBody RequestContentDto requestContentDto) {
 
-        return ResponseEntity.ok(
-                ResponseData.builder()
-                        .status(200)
-                        .message("Success")
-                        .data(contentService.getContentList(ContentDto.builder().build()))
-                        .build()
-        );
+        try {
+            return ResponseEntity.ok(
+                    ResponseData.builder()
+                            .status(200)
+                            .message("Success")
+                            .data(contentService.getContentList(requestContentDto))
+                            .build()
+            );
+        } catch (Exception e){
+            e.getStackTrace();
+            return ResponseEntity.ok(
+                    ResponseData.builder()
+                            .status(400)
+                            .message(e.getMessage())
+                            .data(null)
+                            .build()
+            );
+        }
+    }
+
+    @PostMapping("/create")
+    public ResponseEntity<ResponseData> writeContent(@RequestBody RequestContentDto requestContentDto) {
+        try {
+            contentService.saveContent(requestContentDto);
+            return ResponseEntity.ok(
+                    ResponseData.builder()
+                            .status(200)
+                            .message("Success")
+                            .build()
+            );
+        } catch (Exception e){
+            e.getStackTrace();
+            return ResponseEntity.ok(
+                    ResponseData.builder()
+                            .status(400)
+                            .message(e.getMessage())
+                            .build()
+            );
+        }
     }
 
 }
