@@ -20,7 +20,7 @@ public class CategoryController {
     @GetMapping("/list")
     public ResponseEntity<ResponseData> getDTO() {
 
-        categoryService.getCategoryList(CategoryDto.builder().build());
+        //categoryService.getCategoryList(CategoryDto.builder().build());
 
         // ResponseEntity를 사용하여 DTO, 상태 코드 함께 반환
         return ResponseEntity.ok(

@@ -29,7 +29,7 @@ public class ResponseContentDto {
     private Long viewCount;
     private String deleteYn;
 
-    private List<ContentFile> contentFile = new ArrayList<>();
+    private final List<ContentFile> contentFile = new ArrayList<>();
 
     public static ResponseContentDto toDto(Content content) {
         return ResponseContentDto.builder()

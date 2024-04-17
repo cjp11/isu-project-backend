@@ -2,7 +2,6 @@ package minihp.service;
 
 import lombok.RequiredArgsConstructor;
 import minihp.data.dto.CategoryDto;
-import minihp.data.dto.ContentDto;
 import minihp.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
