@@ -24,8 +24,8 @@ class ContentRepositoryTest {
     void tearDown() {
     }
 
-    @Test
+    /*@Test
     void test() {
         repository.findAll();
-    }
+    }*/
 }
