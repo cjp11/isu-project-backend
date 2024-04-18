@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
+@SpringBootTest(classes = ContentRepositoryTest.class)
 @Transactional(readOnly = true)
 class ContentRepositoryTest {
 
